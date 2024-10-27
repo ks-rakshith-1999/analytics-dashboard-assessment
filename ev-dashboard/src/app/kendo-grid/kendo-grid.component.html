@@ -1,0 +1,80 @@
+
+<h4>ELECTRIC VEHICLE POPULATION TABLE DATA</h4>
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <mat-form-field class="mat-form-field">
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource" matSort class="mat-table">
+    <!-- VIN Column -->
+    <ng-container matColumnDef="VIN">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> VIN (1-10) </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.VIN}} </mat-cell>
+    </ng-container>
+
+    <!-- Country Column -->
+    <ng-container matColumnDef="County">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> Country </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.County}} </mat-cell>
+    </ng-container>
+
+    <!-- City Column -->
+    <ng-container matColumnDef="City">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> City </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.City}} </mat-cell>
+    </ng-container>
+
+    <!-- State Column -->
+    <ng-container matColumnDef="State">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> State </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.State}} </mat-cell>
+    </ng-container>
+
+    <!-- Postal Code Column -->
+    <ng-container matColumnDef="Postal_Code">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> Postal Code </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.Postal_Code}} </mat-cell>
+    </ng-container>
+
+    <!-- Model Year Column -->
+    <ng-container matColumnDef="Model_Year">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> Model Year </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.Model_Year}} </mat-cell>
+    </ng-container>
+
+    <!-- Make Column -->
+    <ng-container matColumnDef="Make">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> Make </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.Model_Year}} </mat-cell>
+    </ng-container>
+
+    <!-- Model Column -->
+    <ng-container matColumnDef="Model">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> Model </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.Model}} </mat-cell>
+    </ng-container>
+
+    <!-- Electric Vehicle Type Column -->
+    <ng-container matColumnDef="Electric_Vehicle_Type">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> Electric Vehicle Type </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.Electric_Vehicle_Type}} </mat-cell>
+    </ng-container>
+
+    <!-- Electric Range Column -->
+    <ng-container matColumnDef="Electric_Range">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> Electric Range </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.Electric_Range}} </mat-cell>
+    </ng-container>
+
+    <!-- Legislative District Column -->
+    <ng-container matColumnDef="Legislative_District">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="mat-header-cell"> Legislative District </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="mat-cell"> {{element.Legislative_District}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="mat-row"></mat-row>
+  </mat-table>
+</div>
